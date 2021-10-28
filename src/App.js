@@ -10,6 +10,8 @@ import AppMovimientos from "./AppMovimientos";
 import AppProyecciones from "./AppProyecciones";
 import "./styles/App.css";
 
+const imagen='https://www.dropbox.com/s/f8rx0khsdsfy95y/Plafip.png'
+
 function App() {
   return (
     <BrowserRouter>
@@ -36,6 +38,8 @@ function App() {
           <Route path="/login" component={AppLogin} exact />
           <Route path="/recordar-clave" component={AppForgettenPassword} exact />
           <Route path="/registrar-usuario" component={AppSignUp} exact />
+          <Route path="/movimientos" component={AppMovimientos} exact />
+          <Route path="/proyecciones" component={AppProyecciones} exact />
         </Switch>
         <AppFotter />
       </div>
