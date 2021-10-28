@@ -1,24 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import AppNav from "./AppNav";
+import AppHome from "./AppHome";
+import AppFotter from "./AppFooter";
+import AppLogin from "./AppLogin";
+import AppForgettenPassword from "./AppForgottenPassword";
+import AppSignUp from "./AppSignUp";
+import AppMovimientos from "./AppMovimientos";
+import AppProyecciones from "./AppProyecciones";
+import "./styles/App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
+    <BrowserRouter>
+      <div className="App">
+        <header className="App-header">
+          <img src={imagen} className="App-logo" alt="logo" />
+          <p>
           Edit <code>src/App.js</code> and save to reload.
-        </p>
+          </p>
         <a
           className="App-link"
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+        
         </a>
       </header>
-    </div>
+
+        <AppNav />
+        <Switch>
+          <Route path="/" component={AppHome} exact />
+          <Route path="/home" component={AppHome} exact />
+          <Route path="/login" component={AppLogin} exact />
+          <Route path="/recordar-clave" component={AppForgettenPassword} exact />
+          <Route path="/registrar-usuario" component={AppSignUp} exact />
+        </Switch>
+        <AppFotter />
+      </div>
+    </BrowserRouter>
   );
 }
 
